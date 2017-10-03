@@ -87,7 +87,7 @@ class RabbitMQRepository implements iQueueRepository
      * @param array $properties
      * @return AMQPMessage
      */
-    public static function createMessage($body = '', $properties = [])
+    public function createMessage($body = '', $properties = [])
     {
         return new AMQPMessage($body, $properties);
     }
