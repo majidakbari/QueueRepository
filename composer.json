@@ -16,7 +16,7 @@
     },
     "autoload" : {
         "psr-4": {
-            "makbari\\RabbitMQRepository": "src/"
+            "makbari\\RabbitMQRepository\\": "src/"
         }
     }
 }
