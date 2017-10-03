@@ -8,7 +8,7 @@ interface iQueueRepository
      * @param null $channelId
      * @return mixed
      */
-    function setChannel($channelId = null);
+    function channel($channelId = null);
 
     /**
      * @param string $queue
@@ -21,7 +21,7 @@ interface iQueueRepository
      * @param null $ticket
      * @return mixed|null
      */
-    public function queueDeclare(
+    function queueDeclare(
         $queue = '',
         $passive = false,
         $durable = false,
@@ -37,7 +37,7 @@ interface iQueueRepository
      * @param array $properties
      * @return mixed
      */
-    public static function createMessage($body = '', $properties = []);
+    function createMessage($body = '', $properties = []);
 
     /**
      * @param $message
@@ -47,7 +47,7 @@ interface iQueueRepository
      * @param bool $immediate
      * @param null $ticket
      */
-    public function basicPublish(
+    function basicPublish(
         $message,
         $exchange = '',
         $routing_key = '',
@@ -68,7 +68,7 @@ interface iQueueRepository
      * @param array $arguments
      * @return mixed|string
      */
-    public function basicConsume(
+    function basicConsume(
         $queue = '',
         $consumer_tag = '',
         $no_local = false,
@@ -83,5 +83,5 @@ interface iQueueRepository
     /**
      * closes the channel and the connection
      */
-    public function close();
+    function close();
 }

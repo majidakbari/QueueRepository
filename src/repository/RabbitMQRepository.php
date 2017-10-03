@@ -37,12 +37,14 @@ class RabbitMQRepository implements iQueueRepository
 
     /**
      * @param null $channelId
-     * @return AMQPChannel
+     * @return $this
      */
-    public function setChannel($channelId = null)
+    public function channel($channelId = null)
     {
         $channel =  $this->AMQPStreamConnection->channel($channelId);
         $this->channel = $channel;
+
+        return $this;
     }
 
 
@@ -107,7 +109,7 @@ class RabbitMQRepository implements iQueueRepository
         $ticket = null
     )
     {
-        return $this->channel->basic_publish(
+            $this->channel->basic_publish(
             $message,
             $exchange,
             $routing_key,
