@@ -165,4 +165,12 @@ class RabbitMQRepository implements iQueueRepository
         $this->AMQPStreamConnection->close();
     }
 
+    /**
+     * @return AMQPChannel
+     */
+    public function getChannel(): AMQPChannel
+    {
+        return $this->channel;
+    }
+
 }

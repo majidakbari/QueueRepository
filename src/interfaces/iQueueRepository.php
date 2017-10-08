@@ -11,6 +11,11 @@ interface iQueueRepository
     function channel($channelId = null);
 
     /**
+     * @return mixed
+     */
+    function getChannel();
+
+    /**
      * @param string $queue
      * @param bool $passive
      * @param bool $durable
